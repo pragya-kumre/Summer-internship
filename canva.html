@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shapes Grid</title>
+    <link rel="stylesheet" href="CSS/canva.css">
+</head>
+<body>
+
+    <div class="canvas">
+        <div class="grid-container">
+            
+            <div class="shape circle"></div>
+            
+            <div class="shape square"></div>
+            
+            <div class="shape triangle"></div>
+            
+            <div class="shape pentagon">
+                <svg viewBox="0 0 100 100">
+                    <polygon points="50,5 95,38 78,92 22,92 5,38" fill="#1200b3"/>
+                </svg>
+            </div>
+
+            <div class="shape plus">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 35,5 H 65 V 35 H 95 V 65 H 65 V 95 H 35 V 65 H 5 V 35 H 35 Z" fill="#000000"/>
+                </svg>
+            </div>
+            
+            <div class="shape parallelogram"></div>
+            
+            <div class="shape arrow">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 50,5 L 95,50 H 68 V 95 H 32 V 50 H 5 Z" fill="#8a4fff"/>
+                </svg>
+            </div>
+            
+            <div class="shape heart selected">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 Z" fill="#ff3333"/>
+                </svg>
+                <div class="handle tl"></div>
+                <div class="handle tr"></div>
+                <div class="handle bl"></div>
+                <div class="handle br"></div>
+                <div class="handle tc"></div>
+                <div class="handle bc"></div>
+                <div class="handle lc"></div>
+                <div class="handle rc"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

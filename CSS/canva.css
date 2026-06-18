@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* White canvas container simulating workspace */
+.canvas {
+    background-color: #ffffff;
+    width: 900px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* 4x2 Grid system */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    grid-gap: 40px 50px;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Base shape layout sizing */
+.shape {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shape svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Pure CSS Shapes */
+.circle {
+    background-color: #a3ff66;
+    border-radius: 50%;
+}
+
+.square {
+    background-color: #f7dd4a;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 160px solid #ff6611;
+}
+
+.parallelogram {
+    background-color: #cc66ff;
+    transform: skewX(-20deg);
+    width: 130px; /* Adjusted to balance skewed look */
+    margin-left: 15px;
+}
+
+/* Active/Selected shape border effect (Heart) */
+.shape.selected {
+    outline: 1.5px solid #8b3dff;
+    outline-offset: 4px;
+}
+
+/* Selection Handles styling */
+.handle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #ffffff;
+    border: 1.5px solid #8b3dff;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+/* Positioning bounding box corners and edges */
+.tl { top: -8px; left: -8px; }
+.tr { top: -8px; right: -8px; }
+.bl { bottom: -8px; left: -8px; }
+.br { bottom: -8px; right: -8px; }
+
+.tc { top: -8px; left: calc(50% - 3.5px); border-radius: 0; width: 6px; height: 6px; }
+.bc { bottom: -8px; left: calc(50% - 3.5px); border-radius: 0; width: 6px; height: 6px; }
+.lc { left: -8px; top: calc(50% - 3.5px); border-radius: 0; width: 6px; height: 6px; }
+.rc { right: -8px; top: calc(50% - 3.5px); border-radius: 0; width: 6px; height: 6px; }
