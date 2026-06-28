@@ -1,5 +1,4 @@
 let selected = "";
-
 function selectSlot(slot){
     selected = slot;
 
