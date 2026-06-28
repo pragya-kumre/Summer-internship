@@ -4,71 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Parking Slot Booking System</title>
-<link rel="stylesheet" href="Psbs.css">
+<link rel="stylesheet" href="PSBS.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Parking Slot Booking System</h1>
-    </header>
+<nav>
+    <h2>ParkEase</h2>
 
-    <section class="hero">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#slots">Slots</a></li>
+        <li><a href="#booking">Book</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Book Your Parking Slot in Advance</h1>
+
+        <p>
+        Smart parking made simple. Book your slot instantly and enjoy a smooth, stress-free parking experience anytime.
+</p>
+
+        <button onclick="document.getElementById('booking').scrollIntoView()">
+            Book Now
+        </button>
+    </div>
+
+    <div class="hero-image">
         <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=1200"
-             alt="Parking Area">
+        alt="Parking">
+    </div>
 
-        <h2>Book Your Parking Slot Easily</h2>
-        <p>Find available parking spaces and reserve them online.</p>
-    </section>
+</section>
 
-    <section class="facilities">
-        <h2>Parking Facilities</h2>
 
-        <div class="card">
-            <h3>City Mall Parking</h3>
-            <p>Capacity: 100 Slots</p>
-            <p>Price: ₹20/hour</p>
-        </div>
+<section class="stats">
 
-        <div class="card">
-            <h3>Railway Station Parking</h3>
-            <p>Capacity: 150 Slots</p>
-            <p>Price: ₹15/hour</p>
-        </div>
+    <div class="box">
+        <h2>500+</h2>
+        <p>Parking Slots</p>
+    </div>
 
-        <div class="card">
-            <h3>Airport Parking</h3>
-            <p>Capacity: 300 Slots</p>
-            <p>Price: ₹50/hour</p>
-        </div>
+    <div class="box">
+        <h2>50+</h2>
+        <p>Facilities</p>
+    </div>
 
-    </section>
+    <div class="box">
+        <h2 id="bookingCount">1000+</h2>
+        <p>Bookings</p>
+    </div>
 
-    <section class="slot-section">
-        <h2>Select Parking Slot</h2>
+</section>
 
-        <div class="slots">
-            <button class="slot available" onclick="selectSlot('A1')">A1</button>
-            <button class="slot available" onclick="selectSlot('A2')">A2</button>
-            <button class="slot booked">A3</button>
-            <button class="slot available" onclick="selectSlot('A4')">A4</button>
-            <button class="slot available" onclick="selectSlot('B1')">B1</button>
-            <button class="slot booked">B2</button>
-        </div>
+<section class="facilities" id="facilities">
 
-        <h3 id="selectedSlot">Selected Slot: None</h3>
-    </section>
+<h2>Parking Facilities</h2>
 
-    <section class="booking">
-        <h2>Booking Form</h2>
+<div class="cards">
 
-        <input type="text" placeholder="Enter Name">
-        <input type="text" placeholder="Vehicle Number">
-        <input type="date">
+<div class="card">
+<img src="https://www.omaxe.com/blog/wp-content/uploads/2019/12/Banner-7.jpg">
 
-        <button onclick="bookSlot()">Confirm Booking</button>
-    </section>
+<h3>City Mall Parking</h3>
+<p>Capacity: 100 Slots</p>
+<p>₹20 / hour</p>
+</div>
 
-    <script src="Psbs.js"></script>
+<div class="card">
+<img src="https://static.india.com/wp-content/uploads/2026/06/RailwayStation.jpg?impolicy=Medium_Resize&w=1200&h=800">
+
+<h3>Railway Station Parking</h3>
+<p>Capacity: 150 Slots</p>
+<p>₹15 / hour</p>
+</div>
+
+<div class="card">
+<img src="https://images.stockcake.com/public/3/e/c/3ec5a47d-52f9-4825-b71a-a607cb4538ac_large/modern-airport-parking-stockcake.jpg">
+
+<h3>Airport Parking</h3>
+<p>Capacity: 300 Slots</p>
+<p>₹50 / hour</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="slots-section" id="slots">
+
+<h2>🚗 Select Parking Slot</h2>
+<p class="slot-sub">Green = Available | Red = Booked</p>
+
+<div class="slots">
+
+<button class="slot available" onclick="selectSlot(this,'A1')">A1</button>
+<button class="slot available" onclick="selectSlot(this,'A2')">A2</button>
+<button class="slot booked" disabled>A3</button>
+<button class="slot available" onclick="selectSlot(this,'A4')">A4</button>
+<button class="slot available" onclick="selectSlot(this,'B1')">B1</button>
+<button class="slot booked" disabled>B2</button>
+<button class="slot available" onclick="selectSlot(this,'B3')">B3</button>
+<button class="slot available" onclick="selectSlot(this,'B4')">B4</button>
+
+</div>
+<br>
+<h3 id="selectedSlot">Selected Slot : None</h3>
+
+</section>
+
+<section class="booking" id="booking">
+
+<h2>Reserve Parking Slot</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<input type="text" id="vehicle" placeholder="Vehicle Number">
+<input type="date" id="date">
+<input type="time" id="time">
+
+<button onclick="bookSlot()">Confirm Booking</button>
+
+</section>
+
+<section id="result"></section>
+
+<footer>
+<p>Parking Slot Booking System © 2026</p>
+</footer>
+
+<script src="PSBS.js"></script>
 
 </body>
 </html>

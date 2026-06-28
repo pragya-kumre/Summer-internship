@@ -1,82 +1,348 @@
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
+/* ================= GLOBAL ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-header{
-    background:#0077cc;
-    color:white;
-    text-align:center;
-    padding:15px;
+body{
+background:#f4f6f9;
+color:#222;
 }
+
+/* ================= NAV ================= */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#0d6efd;
+color:white;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-    text-align:center;
-    padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:50px;
+gap:30px;
 }
 
-.hero img{
-    width:90%;
-    max-width:900px;
-    border-radius:10px;
+.hero-text{
+flex:1;
 }
+
+.hero-text h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:18px;
+margin-bottom:20px;
+color:#555;
+}
+
+.hero-text button{
+padding:12px 25px;
+background:#0d6efd;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.hero-text button:hover{
+transform:scale(1.05);
+background:#0b5ed7;
+}
+
+.hero-image{
+flex:1;
+}
+
+.hero-image img{
+width:100%;
+border-radius:15px;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:30px;
+flex-wrap:wrap;
+}
+
+.box{
+background:white;
+padding:20px;
+width:180px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+transition:0.3s;
+}
+
+.box:hover{
+transform:translateY(-5px);
+}
+
+/* ================= FACILITIES ================= */
 
 .facilities{
-    padding:20px;
+padding:50px;
+}
+
+.facilities h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
 .card{
-    background:white;
-    padding:15px;
-    margin:15px 0;
-    border-radius:10px;
-    box-shadow:0 0 5px rgba(0,0,0,0.2);
+background:white;
+width:300px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+transition:0.3s;
 }
 
-.slot-section{
-    padding:20px;
+.card:hover{
+transform:translateY(-5px);
 }
 
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3,
+.card p{
+padding:10px;
+}
+
+/* ================= SLOT SECTION ================= */
+
+/* SLOT SECTION HEADER */
+.slots-section h2{
+font-size:28px;
+margin-bottom:5px;
+color:#0d6efd;
+}
+
+.slot-sub{
+color:#666;
+margin-bottom:15px;
+font-size:14px;
+}
+
+/* SLOT CONTAINER LOOK */
 .slots{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+background:white;
+padding:20px;
+border-radius:15px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+max-width:600px;
+margin:0 auto;
 }
 
+/* SLOT BUTTONS */
+/* ================= SLOT SECTION ================= */
+
+.slots-section{
+padding:40px;
+text-align:center;
+display:block;
+}
+
+/* HEADING */
+.slots-section h2{
+font-size:28px;
+color:#0d6efd;
+margin-bottom:5px;
+display:block;
+width:100%;
+}
+
+/* SUBTITLE */
+.slot-sub{
+color:#666;
+font-size:14px;
+margin-bottom:15px;
+display:block;
+width:100%;
+}
+
+/* SLOT BOX CONTAINER */
+.slots{
+background:white;
+padding:20px;
+border-radius:15px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+max-width:600px;
+margin:0 auto;
+}
+
+/* SLOT BUTTON */
 .slot{
-    width:70px;
-    height:50px;
-    border:none;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+width:75px;
+height:65px;
+border:none;
+font-weight:bold;
+color:white;
+cursor:pointer;
+border-radius:10px;
+transition:0.25s;
+box-shadow:0 3px 8px rgba(0,0,0,0.15);
 }
 
+/* HOVER EFFECT */
+.slot:hover{
+transform:scale(1.08);
+}
+
+/* AVAILABLE SLOT */
 .available{
-    background:green;
+background:linear-gradient(135deg,#28a745,#1e7e34);
 }
 
+/* BOOKED SLOT */
 .booked{
-    background:red;
-    cursor:not-allowed;
+background:linear-gradient(135deg,#dc3545,#b02a37);
+cursor:not-allowed;
 }
+
+/* SELECTED SLOT */
+.selected-slot{
+background:linear-gradient(135deg,#0d6efd,#0a58ca) !important;
+transform:scale(1.1);
+}
+
+/* ================= BOOKING ================= */
 
 .booking{
-    padding:20px;
+padding:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .booking input{
-    display:block;
-    margin:10px 0;
-    padding:10px;
-    width:250px;
+width:300px;
+padding:10px;
+margin:10px;
+border:1px solid #ccc;
+border-radius:6px;
+outline:none;
+}
+
+.booking input:focus{
+border-color:#0d6efd;
 }
 
 .booking button{
-    background:#0077cc;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    cursor:pointer;
+padding:12px 25px;
+background:#0d6efd;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.booking button:hover{
+background:#0b5ed7;
+transform:scale(1.05);
+}
+
+/* ================= RESULT ================= */
+
+#result{
+text-align:center;
+padding:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+.booking-card{
+display:inline-block;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+margin-top:20px;
+text-align:left;
+animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#0d6efd;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.stats{
+flex-direction:column;
+align-items:center;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
 }
