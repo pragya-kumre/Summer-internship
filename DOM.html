@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+.container{
+width:400px;
+margin:auto;
+background:white;
+padding:20px;
+margin-top:50px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input{
+width:70%;
+padding:10px;
+}
+
+button{
+padding:10px;
+cursor:pointer;
+margin:5px;
+}
+
+li{
+list-style:none;
+background:#e3f2fd;
+padding:10px;
+margin:10px;
+display:flex;
+justify-content:space-between;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>To Do List</h2>
+
+<form id="taskForm">
+
+<input
+type="text"
+id="taskInput"
+placeholder="Enter Task">
+
+<button type="submit">
+Add Task
+</button>
+
+</form>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<script>
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+displayTasks();
+
+document.getElementById("taskForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let taskInput =
+document.getElementById("taskInput");
+
+let task = taskInput.value.trim();
+
+if(task === ""){
+alert("Task cannot be empty");
+return;
+}
+
+tasks.push(task);
+
+saveTasks();
+
+taskInput.value="";
+
+displayTasks();
+
+});
+
+function displayTasks(){
+
+let list =
+document.getElementById("taskList");
+
+list.innerHTML="";
+
+tasks.forEach((task,index)=>{
+
+let li =
+document.createElement("li");
+
+li.innerHTML=`
+
+<span>${task}</span>
+
+<div>
+
+<button onclick="editTask(${index})">
+Edit
+</button>
+
+<button onclick="deleteTask(${index})">
+Delete
+</button>
+
+</div>
+
+`;
+
+list.appendChild(li);
+
+});
+
+}
+
+function editTask(index){
+
+let newTask =
+prompt("Update Task", tasks[index]);
+
+if(newTask && newTask.trim() !== ""){
+
+tasks[index]=newTask;
+
+saveTasks();
+
+displayTasks();
+
+}
+
+}
+
+function deleteTask(index){
+
+if(confirm("Delete Task?")){
+
+tasks.splice(index,1);
+
+saveTasks();
+
+displayTasks();
+
+}
+
+}
+
+function saveTasks(){
+
+localStorage.setItem(
+"tasks",
+JSON.stringify(tasks)
+);
+
+}
+
+</script>
+
+</body>
+</html>

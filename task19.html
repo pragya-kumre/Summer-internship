@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Manager</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:400px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:8px;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    cursor:pointer;
+}
+
+.student{
+    background:#e8f5e9;
+    padding:10px;
+    margin:10px;
+    border-radius:5px;
+    display:flex;
+    justify-content:space-between;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Information Manager</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+
+<input type="number" id="age" placeholder="Enter Age">
+
+<br>
+
+<button onclick="addStudent()">Add Student</button>
+
+<button onclick="clearAll()">Clear All</button>
+
+<button onclick="changeTitle()">Change Title</button>
+
+<div id="studentList"></div>
+
+</div>
+
+<script>
+
+function addStudent(){
+
+let name=document.getElementById("name").value;
+let age=document.getElementById("age").value;
+
+if(name==="" || age===""){
+    alert("Please fill all fields");
+    return;
+}
+
+let student=document.createElement("div");
+student.className="student";
+
+student.innerHTML=
+`
+<span>${name} (Age: ${age})</span>
+<button onclick="deleteStudent(this)">Delete</button>
+`;
+
+document.getElementById("studentList").appendChild(student);
+
+alert("Student Added Successfully");
+
+document.getElementById("name").value="";
+document.getElementById("age").value="";
+}
+
+function deleteStudent(button){
+
+let choice=confirm("Delete this student?");
+
+if(choice){
+button.parentElement.remove();
+}
+}
+
+function clearAll(){
+
+let result=confirm("Remove all students?");
+
+if(result){
+document.getElementById("studentList").innerHTML="";
+}
+}
+
+function changeTitle(){
+
+let newTitle=prompt("Enter new page title");
+
+if(newTitle){
+document.title=newTitle;
+}
+}
+
+setTimeout(()=>{
+alert("Welcome to Student Manager!");
+},2000);
+
+</script>
+
+</body>
+</html>
