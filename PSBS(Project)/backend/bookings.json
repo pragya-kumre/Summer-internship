@@ -1,0 +1,22 @@
+[
+  {
+    "bookingId": "PS1681",
+    "facility": "Airport Parking",
+    "slot": "C1",
+    "name": "Rahul",
+    "vehicle": "MP09AB1234",
+    "date": "2026-07-20",
+    "time": "00:30",
+    "pin": 7699
+  },
+  {
+    "bookingId": "PS8100",
+    "facility": "Business Park Parking",
+    "slot": "B1",
+    "name": "Krish Verma",
+    "vehicle": "MH12GH7890",
+    "date": "2026-07-20",
+    "time": "01:30",
+    "pin": 3517
+  }
+]

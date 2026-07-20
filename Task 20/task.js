@@ -41,4 +41,3 @@ let list = document.getElementById("list");
 
     input.value = "";
         });
-

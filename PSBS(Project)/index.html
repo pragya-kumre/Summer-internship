@@ -17,6 +17,9 @@
         <li><a href="#facilities">Facilities</a></li>
         <li><a href="#slots">Slots</a></li>
         <li><a href="#booking">Book</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+
     </ul>
 </nav>
 
@@ -67,55 +70,156 @@
 
 <div class="cards">
 
+
 <div class="card">
+
 <img src="https://www.omaxe.com/blog/wp-content/uploads/2019/12/Banner-7.jpg">
 
 <h3>City Mall Parking</h3>
 <p>Capacity: 100 Slots</p>
 <p>₹100 / hour</p>
+<button onclick="selectFacility('City Mall Parking')">
+Book Here
+</button>
+
 </div>
 
+
+
 <div class="card">
+
 <img src="https://static.india.com/wp-content/uploads/2026/06/RailwayStation.jpg?impolicy=Medium_Resize&w=1200&h=800">
 
 <h3>Railway Station Parking</h3>
 <p>Capacity: 150 Slots</p>
 <p>₹50 / hour</p>
+<button onclick="selectFacility('Railway Station Parking')">
+Book Here
+</button>
+
 </div>
 
+
+
 <div class="card">
+
 <img src="https://images.stockcake.com/public/3/e/c/3ec5a47d-52f9-4825-b71a-a607cb4538ac_large/modern-airport-parking-stockcake.jpg">
 
 <h3>Airport Parking</h3>
 <p>Capacity: 300 Slots</p>
 <p>₹150 / hour</p>
+<button onclick="selectFacility('Airport Parking')">
+Book Here
+</button>
+
 </div>
+
+
+
+<div class="card">
+
+<img src="https://parkinglogix.com/wp-content/uploads/2021/02/hospitalfeaturedimage.jpg">
+
+<h3>Hospital Parking</h3>
+<p>Capacity: 80 Slots</p>
+<p>₹60 / hour</p>
+<button onclick="selectFacility('Hospital Parking')">
+Book Here
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://www.truegridpaver.com/wp-content/uploads/2019/11/word-image.jpeg">
+
+<h3>Business Park Parking</h3>
+<p>Capacity: 300 Slots</p>
+<p>₹70 / hour</p>
+<button onclick="selectFacility('Business Park Parking')">
+Book Here
+</button>
+</div>
+<div class="card">
+
+<img src="https://c8.alamy.com/comp/2H14GNP/cincinnati-ohiopaul-brown-stadiumparking-lot-car-park-sports-venue-2H14GNP.jpg">
+
+<h3>Stadium Parking</h3>
+<p>Capacity: 250 Slots</p>
+<p>₹80 / hour</p>
+<button onclick="selectFacility('Stadium Parking')">
+Book Here
+</button>
+
+</div>
+
 
 </div>
 
 </section>
 
+
+
 <section class="slots-section" id="slots">
 
 <h2>🚗 Select Parking Slot</h2>
-<p class="slot-sub">Green = Available | Red = Booked</p>
 
-<div class="slots">
+<p class="slot-sub">
+Green = Available | Red = Booked | Blue = Selected
+</p>
+
+
+<div class="parking-area">
+
+
+<div class="slot-row">
 
 <button class="slot available" onclick="selectSlot(this,'A1')">A1</button>
 <button class="slot available" onclick="selectSlot(this,'A2')">A2</button>
 <button class="slot booked" disabled>A3</button>
 <button class="slot available" onclick="selectSlot(this,'A4')">A4</button>
+<button class="slot available" onclick="selectSlot(this,'A5')">A5</button>
+
+</div>
+
+
+
+<div class="slot-row">
+
 <button class="slot available" onclick="selectSlot(this,'B1')">B1</button>
 <button class="slot booked" disabled>B2</button>
 <button class="slot available" onclick="selectSlot(this,'B3')">B3</button>
 <button class="slot available" onclick="selectSlot(this,'B4')">B4</button>
+<button class="slot booked" disabled>B5</button>
 
 </div>
-<br>
-<h3 id="selectedSlot">Selected Slot : None</h3>
+
+
+
+<div class="slot-row">
+
+<button class="slot available" onclick="selectSlot(this,'C1')">C1</button>
+<button class="slot available" onclick="selectSlot(this,'C2')">C2</button>
+<button class="slot available" onclick="selectSlot(this,'C3')">C3</button>
+<button class="slot booked" disabled>C4</button>
+<button class="slot available" onclick="selectSlot(this,'C5')">C5</button>
+
+</div>
+
+
+</div>
+
+
+<h3 id="selectedSlot">
+Selected Slot : None
+</h3>
+
 
 </section>
+
 
 <section class="booking" id="booking">
 
