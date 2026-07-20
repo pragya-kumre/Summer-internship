@@ -18,5 +18,15 @@
     "date": "2026-07-20",
     "time": "01:30",
     "pin": 3517
+  },
+  {
+    "bookingId": "PS5808",
+    "facility": "Airport Parking",
+    "slot": "B3",
+    "name": "Amit Singh",
+    "vehicle": "MP09AB1234",
+    "date": "2026-07-21",
+    "time": "08:00",
+    "pin": 9146
   }
 ]
